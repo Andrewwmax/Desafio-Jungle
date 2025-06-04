@@ -1,0 +1,24 @@
+digraph G {
+    rankdir=LR;
+    node [shape=box style=rounded fontsize=10];
+
+    subgraph cluster_App {
+    label = "App";
+
+    Core [label="Entidade Cidadao\n(Core)"];
+    UseCases [label="Cadastro e Busca\n(Domain)"];
+    Controller [label="Controladores\n(Http)"];
+    Repository [label="Repositório\n(Infra)"];
+    View [label="HTML (Formulário e Resultado)"];
+    }
+
+    Client [label="Usuário (Browser)", shape=oval];
+    Index [label="index.php", shape=box, style="filled", fillcolor=lightgray];
+
+    Client -> Index -> Controller;
+    Controller -> UseCases;
+    UseCases -> Core;
+    UseCases -> Repository;
+    Controller -> View;
+    Repository -> Core;
+}

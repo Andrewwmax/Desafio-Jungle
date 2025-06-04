@@ -1,0 +1,27 @@
+# Use a imagem oficial do PHP 8 com FPM (FastCGI Process Manager)
+FROM php:8.3-fpm-alpine
+
+# Definir o diretório de trabalho dentro do contêiner
+WORKDIR /var/www/html
+
+# Instalar extensões PHP comuns (exemplo: mysqli, pdo_mysql, gd)
+RUN docker-php-ext-install pdo_mysql opcache
+
+# ----------------------------------------------------------------------
+# Adicionar a instalação do Composer
+# ----------------------------------------------------------------------
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# ----------------------------------------------------------------------
+
+# Copiar os arquivos da aplicação para o diretório de trabalho no contêiner
+# Se você for usar o Composer para instalar dependências,
+# considere copiar apenas o composer.json e composer.lock antes do RUN composer install
+# e depois copiar o restante da aplicação. Isso ajuda no cache do Docker.
+COPY . /var/www/html
+
+# Expor a porta 9000 para o PHP-FPM
+EXPOSE 9000
+
+# O comando padrão para o PHP-FPM já está definido na imagem base.
+# Não precisamos de CMD aqui.
