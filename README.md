@@ -91,9 +91,9 @@ Você verá a tela com:
 
 ## ✨ Melhorias futuras (bonus)
 
--   [x] 🟡 Camada de apresentação mais rica com HTML/CSS/JS separados;
--   [ ] 🔴 Validações mais robustas;
--   [ ] 🔴 Testes automatizados (PHPUnit);
+-   [x] ✅ Camada de apresentação mais rica com HTML/CSS/JS separados;
+-   [x] 🟡 Testes automatizados (PHPUnit);
+-   [ ] 🟠 Validações mais robustas;
 -   [ ] 🔜 Integração com banco de dados relacional (Postgres).
 
 ---
