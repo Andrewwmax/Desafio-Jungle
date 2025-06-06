@@ -1,10 +1,11 @@
 <?php
 
-use App\Core\Services\NisGeneratorService;
 use PHPUnit\Framework\TestCase;
-use App\Core\Services\CadastroCidadaoService;
-use App\Core\Cidadao;
-use App\Core\Contracts\CidadaoRepositoryInterface;
+
+use App\Domain\Cidadao;
+use App\Domain\Services\NisGeneratorService;
+use App\Domain\UseCases\CadastroCidadaoUseCase;
+use App\Application\Contracts\CidadaoRepositoryInterface;
 
 class FakeCidadaoRepository implements CidadaoRepositoryInterface {
     private array $data = [];
@@ -18,12 +19,12 @@ class FakeCidadaoRepository implements CidadaoRepositoryInterface {
     }
 }
 
-class CadastroCidadaoServiceTest extends TestCase {
+class CadastroCidadaoUseCaseTest extends TestCase {
     public function testCadastroDeCidadaoGeraNisValido() {
         $repo = new FakeCidadaoRepository();
         $nis = new NisGeneratorService($repo);
 
-        $service = new CadastroCidadaoService($repo, $nis);
+        $service = new CadastroCidadaoUseCase($repo, $nis);
 
         $cidadao = $service->cadastrar("Maria da Silva");
 

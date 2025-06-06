@@ -39,6 +39,20 @@ cd desafio-jungle
 
 ### 3. Suba os containers
 
+#### 3.1 Rode os testes
+
+```bash
+docker-compose run --rm test
+```
+
+OU
+
+```bash
+make test
+```
+
+#### 3.2 Rode a aplicação
+
 ```bash
 docker-compose up --build
 ```
@@ -62,21 +76,22 @@ Você verá a tela com:
 ```
 .
 ├── app
-│   ├── Core                # Entidades, contratos e serviços
-│   │   ├── Contracts
-│   │   └── Services
-│   ├── Domain
+│   ├── Application
+│   │   └── Contracts
+│   ├── Domain              # Entidades, contratos e serviços
+│   │   ├── Services
+│   │   └── UseCases
 │   ├── Http                # Controller
 │   │   └── Controller
 │   ├── Infrastructure      # Repositórios e persistência
 │   │   └── Repository
 │   ├── Storage             # Persistência dos cidadãos em JSON
-│   └── Tests
 ├── docker
 │   ├── nginx
 │   └── php
 ├── docs
 │   └── arquitetura
+├── tests
 ├── nginx
 ├── public                  # Entrada da aplicação (index.php)
 ├── vendor                  # Dependências gerenciadas pelo Composer
@@ -92,7 +107,7 @@ Você verá a tela com:
 ## ✨ Melhorias futuras (bonus)
 
 -   [x] ✅ Camada de apresentação mais rica com HTML/CSS/JS separados;
--   [x] 🟡 Testes automatizados (PHPUnit);
+-   [x] 🟢 Testes automatizados (PHPUnit);
 -   [ ] 🟠 Validações mais robustas;
 -   [ ] 🔜 Integração com banco de dados relacional (Postgres).
 

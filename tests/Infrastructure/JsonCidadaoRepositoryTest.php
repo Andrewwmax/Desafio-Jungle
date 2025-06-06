@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-use App\Core\Cidadao;
+use App\Domain\Cidadao;
 use App\Infrastructure\Repository\JsonCidadaoRepository;
 
 class JsonCidadaoRepositoryTest extends TestCase

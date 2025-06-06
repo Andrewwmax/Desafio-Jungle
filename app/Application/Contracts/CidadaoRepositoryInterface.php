@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Core\Contracts;
+namespace App\Application\Contracts;
 
-use App\Core\Cidadao;
+use App\Domain\Cidadao;
 
 interface CidadaoRepositoryInterface{
     /**

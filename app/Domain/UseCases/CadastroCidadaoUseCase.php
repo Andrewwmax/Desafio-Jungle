@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Core\Services;
+namespace App\Domain\UseCases;
 
-use App\Core\Cidadao;
-use App\Core\Contracts\CidadaoRepositoryInterface;
+use App\Domain\Cidadao;
+use App\Domain\Services\NisGeneratorService;
+use App\Application\Contracts\CidadaoRepositoryInterface;
 
-class CadastroCidadaoService {
+class CadastroCidadaoUseCase {
     private CidadaoRepositoryInterface $repositorio;
     private NisGeneratorService $geradorNis;
 

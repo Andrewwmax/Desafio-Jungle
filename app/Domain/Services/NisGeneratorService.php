@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Core\Services;
+namespace App\Domain\Services;
 
-use App\Core\Contracts\CidadaoRepositoryInterface;
+use App\Application\Contracts\CidadaoRepositoryInterface;
 
 class NisGeneratorService {
     private CidadaoRepositoryInterface $repositorio;

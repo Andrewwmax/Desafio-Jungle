@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Core\Services;
+namespace App\Domain\UseCases;
 
-use App\Core\Cidadao;
-use App\Core\Contracts\CidadaoRepositoryInterface;
+use App\Domain\Cidadao;
+use App\Application\Contracts\CidadaoRepositoryInterface;
 
-class BuscarCidadaoPorNisService {
+class BuscarCidadaoPorNisUseCase {
     private CidadaoRepositoryInterface $repositorio;
 
     public function __construct(CidadaoRepositoryInterface $repositorio) {

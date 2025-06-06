@@ -2,9 +2,9 @@
 
 use PHPUnit\Framework\TestCase;
 
-use App\Core\Cidadao;
-use App\Core\Contracts\CidadaoRepositoryInterface;
-use App\Core\Services\BuscarCidadaoPorNisService;
+use App\Domain\Cidadao;
+use App\Domain\UseCases\BuscarCidadaoPorNisUseCase;
+use App\Application\Contracts\CidadaoRepositoryInterface;
 
 class FakeCidadaoRepositoryForBusca implements CidadaoRepositoryInterface {
     private array $data = [];
@@ -23,14 +23,14 @@ class FakeCidadaoRepositoryForBusca implements CidadaoRepositoryInterface {
     }
 }
 
-class BuscarCidadaoPorNisServiceTest extends TestCase {
+class BuscarCidadaoPorNisUseCaseTest extends TestCase {
     public function testDeveRetornarCidadaoSeExistir() {
         $repo = new FakeCidadaoRepositoryForBusca();
         $cidadao = new Cidadao("João da Silva", "12345678901");
 
         $repo->inserirFake($cidadao);
 
-        $service = new BuscarCidadaoPorNisService($repo);
+        $service = new BuscarCidadaoPorNisUseCase($repo);
         $resultado = $service->buscar("12345678901");
 
         $this->assertInstanceOf(Cidadao::class, $resultado);
@@ -40,7 +40,7 @@ class BuscarCidadaoPorNisServiceTest extends TestCase {
 
     public function testDeveRetornarNullSeCidadaoNaoExistir() {
         $repo = new FakeCidadaoRepositoryForBusca();
-        $service = new BuscarCidadaoPorNisService($repo);
+        $service = new BuscarCidadaoPorNisUseCase($repo);
 
         $resultado = $service->buscar("00000000000");
 

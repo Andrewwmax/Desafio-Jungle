@@ -1,7 +1,5 @@
-<div class="mensagem">
-    <strong>Sucesso!</strong><br>
-    Cidadão <strong><?= htmlspecialchars($nome) ?></strong> cadastrado com NIS <strong><?= $nis ?></strong>.
-</div>
-<div>
-    <button onclick="history.back()">Voltar</button>
-</div>
+<?php if (isset($data)): ?>
+    <script>
+        showModal("<?= htmlspecialchars($data['message']) . '\n' . 'Nome: ' . htmlspecialchars($data['nome']) . '\nNIS: ' . htmlspecialchars($data['nis']) ?>");
+    </script>
+<?php endif; ?>

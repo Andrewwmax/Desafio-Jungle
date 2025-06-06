@@ -2,8 +2,8 @@
 
 namespace App\Infrastructure\Repository;
 
-use App\Core\Cidadao;
-use App\Core\Contracts\CidadaoRepositoryInterface;
+use App\Domain\Cidadao;
+use App\Application\Contracts\CidadaoRepositoryInterface;
 
 class JsonCidadaoRepository implements CidadaoRepositoryInterface {
     private string $arquivo;

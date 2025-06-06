@@ -1,11 +1,10 @@
 <?php
 
-use App\Core\Services\NisGeneratorService;
 use PHPUnit\Framework\TestCase;
-
-use App\Core\Cidadao;
-use App\Core\Services\CadastroCidadaoService;
-use App\Core\Contracts\CidadaoRepositoryInterface;
+use App\Domain\Services\NisGeneratorService;
+use App\Domain\Cidadao;
+use App\Domain\UseCases\CadastroCidadaoUseCase;
+use App\Application\Contracts\CidadaoRepositoryInterface;
 
 class FakeRepositoryComConflito implements CidadaoRepositoryInterface {
     private array $nisRegistrados = [];
@@ -23,11 +22,11 @@ class FakeRepositoryComConflito implements CidadaoRepositoryInterface {
     }
 }
 
-class NisGenerationTest extends TestCase {
+class NisGenerationServiceTest extends TestCase {
     public function testNisEhGeradoComOnzeDigitos() {
         $repo = new FakeRepositoryComConflito();
         $nis = new NisGeneratorService($repo);
-        $service = new CadastroCidadaoService($repo, $nis);
+        $service = new CadastroCidadaoUseCase($repo, $nis);
 
         $cidadao = $service->cadastrar("Teste Nome");
 
@@ -38,7 +37,7 @@ class NisGenerationTest extends TestCase {
     public function testNisGeradoEhUnico() {
         $repo = new FakeRepositoryComConflito();
         $nis = new NisGeneratorService($repo);
-        $service = new CadastroCidadaoService($repo, $nis);
+        $service = new CadastroCidadaoUseCase($repo, $nis);
 
         $nises = [];
 

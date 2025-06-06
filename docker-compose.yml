@@ -17,6 +17,14 @@ services:
         volumes:
             - .:/app/
 
+    test:
+        build:
+            context: .
+            dockerfile: docker/php/Dockerfile
+        command: /app/vendor/bin/phpunit --testdox /app/tests/
+        volumes:
+            - .:/app
+
     # composer:
     #     image: composer
     #     volumes:
