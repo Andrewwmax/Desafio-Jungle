@@ -21,7 +21,7 @@ services:
         build:
             context: .
             dockerfile: docker/php/Dockerfile
-        command: vendor/bin/phpunit --testdox /app/tests/
+        command: vendor/bin/phpunit --testdox tests/
         volumes:
             - .:/var/www/html
 
