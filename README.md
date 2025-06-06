@@ -29,6 +29,15 @@ Sistema simples para cadastro e consulta de cidadãos utilizando o NIS (Número 
 
 ---
 
+## 🖼️ Protótipo (Figma)
+
+[🔗 Clique para ir a demonstração do Protótipo](https://www.figma.com/design/bjLB87csStazCGEeZRRdts/Sistema-de-Cadastro-NIS?node-id=2016-542&t=GR49yf3G49OclF4S-1)
+
+E execute o protótipo visual, clicando no canto superior direito, no icone de execução
+![prototipo](docs/Apresentacao.gif)
+
+---
+
 ## 🚀 Como executar o projeto
 
 ### 1. Pré-requisitos

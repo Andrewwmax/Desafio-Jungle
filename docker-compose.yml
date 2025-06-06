@@ -6,7 +6,7 @@ services:
         ports:
             - "8080:80"
         volumes:
-            - .:/app/
+            - .:/var/www/html
         links:
             - php
 
@@ -15,15 +15,15 @@ services:
             context: .
             dockerfile: docker/php/Dockerfile
         volumes:
-            - .:/app/
+            - .:/var/www/html
 
     test:
         build:
             context: .
             dockerfile: docker/php/Dockerfile
-        command: /app/vendor/bin/phpunit --testdox /app/tests/
+        command: vendor/bin/phpunit --testdox /app/tests/
         volumes:
-            - .:/app
+            - .:/var/www/html
 
     # composer:
     #     image: composer

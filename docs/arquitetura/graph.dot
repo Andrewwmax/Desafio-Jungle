@@ -12,7 +12,7 @@ digraph G {
         Services [label="Services (Domain)", fillcolor="#A8E6CF", style="filled"];
         UseCases [label="UseCases\n(Cadastro e Busca)\n(Domain)", fillcolor="#FFFACD", style="filled"];
         Controller [label="Controller\n(Http)", fillcolor="#FFCCCB", style="filled"];
-        Repository [label="Repository\n(JsonCidadaoRepository)\n(Infrastructure)", fillcolor="#D1C4E9", style="filled"];
+        Repository [label="Repository\n(Infrastructure)", fillcolor="#D1C4E9", style="filled"];
         Storage [label="Storage\n(JSON File)", fillcolor="#E0E0E0", style="filled"];
         View [label="Views\n(Formulário, Resultado, Sucesso)", fillcolor="#FFD580", style="filled"];
     }

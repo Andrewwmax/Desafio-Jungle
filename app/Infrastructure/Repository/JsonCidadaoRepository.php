@@ -16,6 +16,12 @@ class JsonCidadaoRepository implements CidadaoRepositoryInterface {
         }
     }
 
+    /**
+     * Salva um objeto Cidadao no arquivo JSON.
+     * Se o cidadão já existir (baseado no NIS), ele será atualizado.
+     *
+     * @param Cidadao $cidadao O objeto Cidadao a ser salvo.
+     */
     public function salvar(Cidadao $cidadao): void {
         $dados = $this->carregarDados();
         $dados[$cidadao->getNis()] = [
@@ -26,6 +32,12 @@ class JsonCidadaoRepository implements CidadaoRepositoryInterface {
         file_put_contents($this->arquivo, json_encode($dados, JSON_PRETTY_PRINT));
     }
 
+    /**
+     * Busca um cidadão pelo seu NIS.
+     *
+     * @param string $nis O NIS do cidadão a ser buscado.
+     * @return Cidadao|null O objeto Cidadao encontrado ou null se não existir.
+     */
     public function buscarPorNis(string $nis): ?Cidadao {
         $dados = $this->carregarDados();
 
@@ -36,6 +48,11 @@ class JsonCidadaoRepository implements CidadaoRepositoryInterface {
         return null;
     }
 
+    /**
+     * Carrega os dados do arquivo JSON.
+     *
+     * @return array Um array associativo contendo os dados dos cidadãos.
+     */
     private function carregarDados(): array {
         $conteudo = file_get_contents($this->arquivo);
         return json_decode($conteudo, true) ?? [];

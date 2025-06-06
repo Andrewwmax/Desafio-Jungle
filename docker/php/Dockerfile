@@ -1,17 +1,16 @@
 # FROM php:8.3.4-fpm-alpine3.19
 FROM php:8.3-fpm-alpine
 
-WORKDIR /app
+# Define o diretório de trabalho
+WORKDIR /var/www/html
 
-# Copy the php config file
+# Copia os arquivo de configuração do php-fpm
 COPY ./docker/php/php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
-
-COPY . /app
 
 # Instala o Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-RUN composer install --prefer-dist --no-scripts --no-interaction
 
-# Copy the application code
+# Copia o projeto
+COPY . /var/www/html
 
-VOLUME ["/app"]
+CMD composer install --no-interaction --prefer-dist --optimize-autoloader && php-fpm

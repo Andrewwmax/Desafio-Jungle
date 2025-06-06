@@ -24,9 +24,12 @@ function showModal(message) {
 		};
 	});
 }
+
 /** @deprecated
  *  old
  */
+{
+	/* 
 function exibirModal(mensagem) {
 	document.getElementById("modal-message").innerText = mensagem;
 	document.getElementById("modal").style.display = "flex";
@@ -35,8 +38,6 @@ function exibirModal(mensagem) {
 function fecharModal() {
 	document.getElementById("modal").style.display = "none";
 }
-{
-	/* 
 document.getElementById('formCadastro').addEventListener('submit', async function(e) {
     e.preventDefault();
     const formData = new FormData(this);

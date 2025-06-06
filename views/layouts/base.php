@@ -5,6 +5,8 @@
     <title>Cadastro de Cidadãos - Desafio Jungle</title>
     <link rel="stylesheet" href="/assets/style.css">
     <script src="/assets/script.js" defer></script>
+
+    <!-- Adicionado para compatibilidade com alguns navegadores -->
     <script>
         function showModal(message) {
             document.addEventListener("DOMContentLoaded", () => {
