@@ -1,24 +1,33 @@
 digraph G {
     rankdir=LR;
-    node [shape=box style=rounded fontsize=10];
+    node [shape=box style=rounded fontsize=10 fontname="Arial"];
 
+    // Subgraph APP
     subgraph cluster_App {
-    label = "App";
+        label = "App";
+        style = rounded;
+        color = "#8CCAF7";
 
-    Core [label="Entidade Cidadao\n(Core)"];
-    UseCases [label="Cadastro e Busca\n(Domain)"];
-    Controller [label="Controladores\n(Http)"];
-    Repository [label="Repositório\n(Infra)"];
-    View [label="HTML (Formulário e Resultado)"];
+        Core [label="Entidade Cidadao\n(Domain)", fillcolor="#A8E6CF", style="filled"];
+        Services [label="Services (Domain)", fillcolor="#A8E6CF", style="filled"];
+        UseCases [label="UseCases\n(Cadastro e Busca)\n(Domain)", fillcolor="#FFFACD", style="filled"];
+        Controller [label="Controller\n(Http)", fillcolor="#FFCCCB", style="filled"];
+        Repository [label="Repository\n(JsonCidadaoRepository)\n(Infrastructure)", fillcolor="#D1C4E9", style="filled"];
+        Storage [label="Storage\n(JSON File)", fillcolor="#E0E0E0", style="filled"];
+        View [label="Views\n(Formulário, Resultado, Sucesso)", fillcolor="#FFD580", style="filled"];
     }
 
-    Client [label="Usuário (Browser)", shape=oval];
-    Index [label="index.php", shape=box, style="filled", fillcolor=lightgray];
+    // Client + index.php
+    Client [label="Usuário (Browser)", shape=oval, fontsize=11, fontname="Arial"];
+    Index [label="index.php", shape=box, style="filled", fillcolor="lightgray"];
 
+    // Fluxo de dependência
     Client -> Index -> Controller;
     Controller -> UseCases;
-    UseCases -> Core;
-    UseCases -> Repository;
     Controller -> View;
+    UseCases -> Core;
+    UseCases -> Services;
+    UseCases -> Repository;
     Repository -> Core;
+    Repository -> Storage;
 }

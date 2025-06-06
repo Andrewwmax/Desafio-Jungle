@@ -23,6 +23,12 @@ Sistema simples para cadastro e consulta de cidadãos utilizando o NIS (Número 
 
 ---
 
+## 🏛️ Arquitetura
+
+![Arquitetura](docs/arquitetura/arquitetura.svg)
+
+---
+
 ## 🚀 Como executar o projeto
 
 ### 1. Pré-requisitos
@@ -76,28 +82,30 @@ Você verá a tela com:
 ```
 .
 ├── app
-│   ├── Application
+│   ├── Application         # Contratos
 │   │   └── Contracts
-│   ├── Domain              # Entidades, contratos e serviços
+│   ├── Domain              # Entidades e serviços
 │   │   ├── Services
 │   │   └── UseCases
 │   ├── Http                # Controller
 │   │   └── Controller
-│   ├── Infrastructure      # Repositórios e persistência
+│   ├── Infrastructure      # Repositórios
 │   │   └── Repository
 │   ├── Storage             # Persistência dos cidadãos em JSON
-├── docker
+├── docker                  # Configuração do Docker
 │   ├── nginx
 │   └── php
-├── docs
+├── docs                    # Documents
 │   └── arquitetura
-├── tests
+├── views                   # Views da aplicação (front)
+|   ├── layouts
+│   └── cidadao
+├── tests                   # Testes
 ├── nginx
 ├── public                  # Entrada da aplicação (index.php)
 ├── vendor                  # Dependências gerenciadas pelo Composer
 ├── composer.json           # Autoload PSR-4
 ├── docker-compose.yml
-├── Dockerfile
 └── README.md
 
 ```

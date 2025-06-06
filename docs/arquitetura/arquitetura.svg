@@ -1,0 +1,128 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="841pt" height="183pt" viewBox="0.00 0.00 841.45 183">
+<g id="graph0" class="graph" transform="translate(4,179) scale(1)" data-name="G">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-179 837.45,-179 837.45,4 -4,4"/>
+<g id="clust1" class="cluster" data-name="cluster_App">
+
+<path fill="none" stroke="rgb(140, 202, 247)" d="M264.82,-8C264.82,-8 813.45,-8 813.45,-8 819.45,-8 825.45,-14 825.45,-20 825.45,-20 825.45,-155 825.45,-155 825.45,-161 819.45,-167 813.45,-167 813.45,-167 264.82,-167 264.82,-167 258.82,-167 252.82,-161 252.82,-155 252.82,-155 252.82,-20 252.82,-20 252.82,-14 258.82,-8 264.82,-8"/>
+<text text-anchor="middle" x="539.13" y="-150.4" font-family="Times,serif" font-size="14.00">App</text>
+</g>
+<!-- Domain -->
+
+<!-- UseCases -->
+<g id="node3" class="node" pointer-events="visible" data-name="UseCases">
+
+<polygon fill="#fffacd" stroke="black" points="489.79,-76 387.49,-76 387.49,-32 489.79,-32 489.79,-76"/>
+<text text-anchor="middle" x="438.64" y="-63" font-family="Arial" font-size="10.00">UseCases</text>
+<text text-anchor="middle" x="438.64" y="-51" font-family="Arial" font-size="10.00">(Cadastro e Busca)</text>
+<text text-anchor="middle" x="438.64" y="-39" font-family="Arial" font-size="10.00">(Domain)</text>
+</g><g id="node2" class="node" pointer-events="visible" data-name="Services" data-comment="UseCases">
+
+<polygon fill="#a8e6cf" stroke="black" points="670.77,-72 572.28,-72 572.28,-36 670.77,-36 670.77,-72"/>
+<text text-anchor="middle" x="621.52" y="-51" font-family="Arial" font-size="10.00">Services (Domain)</text>
+</g>
+<!-- Repository -->
+<g id="node5" class="node" pointer-events="visible" data-name="Repository">
+
+<polygon fill="#d1c4e9" stroke="black" points="685.86,-134 557.19,-134 557.19,-90 685.86,-90 685.86,-134"/>
+<text text-anchor="middle" x="621.52" y="-121" font-family="Arial" font-size="10.00">Repository</text>
+<text text-anchor="middle" x="621.52" y="-109" font-family="Arial" font-size="10.00">(JsonCidadaoRepository)</text>
+<text text-anchor="middle" x="621.52" y="-97" font-family="Arial" font-size="10.00">(Infrastructure)</text>
+</g>
+<!-- UseCases&#45;&gt;Repository -->
+<g id="edge7" class="edge" data-name="UseCases-&gt;Repository">
+
+<path fill="none" stroke="black" d="M490.03,-70.16C507.33,-75.7 527.08,-82.04 545.89,-88.07"/>
+<polygon fill="black" stroke="black" points="544.8,-91.4 555.39,-91.12 546.94,-84.73 544.8,-91.4"/>
+</g>
+<!-- Core -->
+<g id="node1" class="node" pointer-events="visible" data-name="Core">
+
+<polygon fill="#a8e6cf" stroke="black" points="817.2,-64 722.19,-64 722.19,-28 817.2,-28 817.2,-64"/>
+<text text-anchor="middle" x="769.69" y="-49" font-family="Arial" font-size="10.00">Entidade Cidadao</text>
+<text text-anchor="middle" x="769.69" y="-37" font-family="Arial" font-size="10.00">(Domain)</text>
+</g><g id="edge6" class="edge" data-name="UseCases-&gt;Services" data-comment="Core">
+
+<path fill="none" stroke="black" d="M490.03,-54C511.94,-54 537.78,-54 560.66,-54"/>
+<polygon fill="black" stroke="black" points="560.45,-57.5 570.45,-54 560.45,-50.5 560.45,-57.5"/>
+</g>
+<!-- UseCases&#45;&gt;Core -->
+<g id="edge5" class="edge" data-name="UseCases-&gt;Core">
+
+<path fill="none" stroke="black" d="M490.09,-39.77C510.69,-34.65 534.86,-29.52 557.11,-27 614,-20.55 629.05,-20.55 685.94,-27 694,-27.91 702.41,-29.31 710.66,-30.94"/>
+<polygon fill="black" stroke="black" points="709.76,-34.33 720.27,-32.98 711.21,-27.48 709.76,-34.33"/>
+</g>
+<!-- Controller -->
+<g id="node4" class="node" pointer-events="visible" data-name="Controller">
+
+<polygon fill="#ffcccb" stroke="black" points="320.34,-101 260.64,-101 260.64,-65 320.34,-65 320.34,-101"/>
+<text text-anchor="middle" x="290.49" y="-86" font-family="Arial" font-size="10.00">Controller</text>
+<text text-anchor="middle" x="290.49" y="-74" font-family="Arial" font-size="10.00">(Http)</text>
+</g>
+<!-- Controller&#45;&gt;UseCases -->
+<g id="edge3" class="edge" data-name="Controller-&gt;UseCases">
+
+<path fill="none" stroke="black" d="M320.72,-77.2C336.59,-74.05 356.85,-70.03 376.03,-66.23"/>
+<polygon fill="black" stroke="black" points="376.54,-69.69 385.67,-64.31 375.18,-62.83 376.54,-69.69"/>
+</g>
+<!-- View -->
+<g id="node7" class="node" pointer-events="visible" data-name="View">
+
+<polygon fill="#ffd580" stroke="black" points="521.08,-130 356.2,-130 356.2,-94 521.08,-94 521.08,-130"/>
+<text text-anchor="middle" x="438.64" y="-115" font-family="Arial" font-size="10.00">Views</text>
+<text text-anchor="middle" x="438.64" y="-103" font-family="Arial" font-size="10.00">(Formulário, Resultado, Sucesso)</text>
+</g>
+<!-- Controller&#45;&gt;View -->
+<g id="edge4" class="edge" data-name="Controller-&gt;View">
+
+<path fill="none" stroke="black" d="M320.72,-88.8C327.98,-90.24 336.16,-91.86 344.73,-93.56"/>
+<polygon fill="black" stroke="black" points="343.79,-96.95 354.28,-95.46 345.15,-90.08 343.79,-96.95"/>
+</g>
+<!-- Repository&#45;&gt;Core -->
+<g id="edge8" class="edge" data-name="Repository-&gt;Core">
+
+<path fill="none" stroke="black" d="M672.01,-89.66C686.67,-83.04 702.75,-75.77 717.52,-69.11"/>
+<polygon fill="black" stroke="black" points="718.95,-72.3 726.62,-65 716.07,-65.92 718.95,-72.3"/>
+</g>
+<!-- Client -->
+<g id="node8" class="node" pointer-events="visible" data-name="Client">
+
+<ellipse fill="none" stroke="black" cx="64.72" cy="-83" rx="64.95" ry="18"/>
+<text text-anchor="middle" x="64.72" y="-79.7" font-family="Arial" font-size="11">Usuário (Browser)</text>
+</g>
+<!-- Index -->
+<!-- Index -->
+<g id="node9" class="node" pointer-events="visible" data-name="Index">
+
+<polygon fill="lightgray" stroke="black" points="225,-101 165.26,-101 165.26,-65 225,-65 225,-101"/>
+<text text-anchor="middle" x="195.13" y="-80" font-family="Arial" font-size="10.00">index.php</text>
+</g><g id="node6" class="node" pointer-events="visible" data-name="Storage" data-comment="Index">
+
+<polygon fill="#e0e0e0" stroke="black" points="803.92,-130 735.47,-130 735.47,-94 803.92,-94 803.92,-130"/>
+<text text-anchor="middle" x="769.69" y="-115" font-family="Arial" font-size="10.00">Storage</text>
+<text text-anchor="middle" x="769.69" y="-103" font-family="Arial" font-size="10.00">(JSON File)</text>
+</g>
+<!-- Client&#45;&gt;Index -->
+
+<!-- Client&#45;&gt;Index -->
+<g id="edge1" class="edge" data-name="Client-&gt;Index">
+
+<path fill="none" stroke="black" d="M129.93,-83C137.99,-83 146.06,-83 153.61,-83"/>
+<polygon fill="black" stroke="black" points="153.48,-86.5 163.48,-83 153.48,-79.5 153.48,-86.5"/>
+</g><g id="edge9" class="edge" data-name="Repository-&gt;Storage" data-comment="Client-&gt;Index">
+
+<path fill="none" stroke="black" d="M686.21,-112C698.91,-112 711.98,-112 723.88,-112"/>
+<polygon fill="black" stroke="black" points="723.81,-115.5 733.81,-112 723.81,-108.5 723.81,-115.5"/>
+</g>
+<!-- Index&#45;&gt;Controller -->
+
+<!-- Index&#45;&gt;Controller -->
+<g id="edge2" class="edge" data-name="Index-&gt;Controller">
+
+<path fill="none" stroke="black" d="M225.42,-83C232.89,-83 241.06,-83 248.98,-83"/>
+<polygon fill="black" stroke="black" points="248.8,-86.5 258.8,-83 248.8,-79.5 248.8,-86.5"/>
+</g>
+
+</g>
+</svg>
